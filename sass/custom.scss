@@ -1,0 +1,80 @@
+// CUSTOM VARIABLES
+$primary: #0a0a23;
+$secondary: #002ead;
+
+// button start
+$btn-padding-y: 0px;
+$btn-padding-x: 14px;
+$btn-padding-y-sm: 0px;
+$btn-padding-x-sm: 14px;
+$btn-padding-y-lg: 0px;
+$btn-padding-x-lg: 14px;
+ 
+$btn-border-radius: 0px;
+$btn-border-radius-sm: 0px;
+$btn-border-radius-lg: 0px;
+
+$btn-background: #dfdfe2;
+$btn-border: $primary;
+$btn-color: $primary;
+
+@mixin button-variant($background, $border, $color) {
+    background-color: $btn-background;
+    border: 3px solid $btn-border;
+    color: $btn-color;
+
+    &:hover {
+        background-color: $primary;
+        border: 3px solid $btn-border;
+        color: #dfdfe2;
+    }
+}
+
+.btn-primary {
+    &.basic {
+        @include button-variant($btn-background, $btn-border, $btn-color);
+    }
+}
+
+//secondary button
+@mixin button-variant($background, $border, $color) {
+    background-color: #feac32;
+    background-image: linear-gradient(#fecc4c,#ffac33);
+    border: 3px solid #f1a02a;
+    color: $primary;
+
+    &:hover {
+        background-color: #fecc4c;
+        background-image: none;
+        border: 3px solid #f1a02a;
+        color: $primary;
+    }
+}
+
+.btn-secondary {
+    &.basic-2 {
+        @include button-variant($btn-background, $btn-border, $btn-color);
+    }
+}
+// button end
+
+// font
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Mono&display=swap");
+
+$font-family-sans-serif: Lato;
+$font-family-monospace: "Roboto Mono";
+
+
+
+// IMPORT THE FUNCTIONS AND VARIABLES
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$custom-theme-colors: (
+    //just testing "altdark": #522192,
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+// IMPORT BOOTSTRAP
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
